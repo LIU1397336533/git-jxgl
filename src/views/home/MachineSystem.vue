@@ -25,7 +25,7 @@
       <div class="add">
         <span @click="toAppend">+</span>
       </div>
-      <div>
+      <div @click="diaozhuang">
         <i class="icon iconfont icon-diaozhuang"></i>
         吊装作业</div>
     </div>
@@ -49,6 +49,11 @@ export default {
       },
       toAppend(){
           this.$router.push({path:'/append'})
+      },
+      // 点击吊装
+      diaozhuang(){
+          this.$router.push({path:'/lifting'})
+
       }
     },
     mounted(){
