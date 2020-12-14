@@ -20,7 +20,7 @@
     </div>
     <div class="footer">
       <div>
-        <i class="icon iconfont icon-richangjianchatianxie"></i>
+        <i class="icon iconfont icon-richangjianchatianxie" @click="toDailyStatus"></i>
         日常检查</div>
       <div class="add">
         <span @click="toAppend">+</span>
@@ -41,6 +41,9 @@ export default {
         }
     },
     methods:{
+      toDailyStatus(){
+          this.$router.push({path:'/dailyStatus'})
+      },
       toConstructor(){
         this.$router.push({path:'/constructor'})
       },

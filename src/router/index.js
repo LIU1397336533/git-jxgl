@@ -10,6 +10,7 @@ import RightUnits from '../views/appendMachine/RightUnits.vue'
 import MachineModel from '../views/appendMachine/MachineModel.vue'
 import MachineSource from '../views/appendMachine/MachineSource.vue'
 import MachineType from '../views/appendMachine/MachineType.vue'
+import DailyStatus from '../views/DailyStatus'
 
 Vue.use(VueRouter)
 
@@ -67,6 +68,11 @@ const routes = [
     name: 'MachineSource',
     component:MachineSource
   },
+  {
+    path: '/dailyStatus',
+    name: 'DailyStatus',
+    component:DailyStatus
+  },
 
 ]
 
@@ -77,7 +83,7 @@ const router = new VueRouter({
 })
 router.beforeEach((to,from,next)=>{
   console.log(to,from.path)
-  let arr=['/','/constructor','/document','/machineType','/machineSystem','/mainPage','/append','/rightUnits','/machineModel','/machineSource']
+  let arr=['/','/constructor','/document','/machineType','/machineSystem','/mainPage','/append','/rightUnits','/machineModel','/machineSource','/dailyStatus']
  if(arr.includes(to.path)){
      next()
      return
