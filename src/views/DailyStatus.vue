@@ -1,5 +1,5 @@
 <template>
-  <div id="TodayProject">
+  <div id="DailyStatus">
     <div class="header">
       <div class="headleft">
         <i class="icon iconfont icon-zuojiantou" @click="returnBack"></i>
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss">
-#TodayProject {
+#DailyStatus {
   display: flex;
   width: 100%;
   height: 100%;
