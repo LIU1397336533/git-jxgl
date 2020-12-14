@@ -1,7 +1,8 @@
   <template>
-  <div id="machineSystem">
+  <div id="machineSystem" >
+   <Tan :show6='show6' @que='que'/>
 
-    <div class="subwayProject">
+    <div class="subwayProject" >
    {{projectName}}
       <i class="icon iconfont icon-ico_open" @click="toConstructor"></i>
     </div>
@@ -12,15 +13,19 @@
           <i class="icon iconfont icon-fangdajing1"></i>
           <input type="text" placeholder="搜索机械名称 / 规格型号 / 项目设备编码">
         </div>
-        <i class="icon iconfont icon-diantong"></i>
+        <i class="icon iconfont icon-diantong" ></i>
       </div>
+       <button class="an" @click="kai">查看状态</button>
     </div>
-    <div class="seek"  >
-
-    </div>
+   
     <div class="footer">
+
       <div @click="toDailyStatus">
         <i class="icon iconfont icon-richangjianchatianxie" ></i>
+
+      <div >
+        <i class="icon iconfont icon-richangjianchatianxie"></i>
+
         日常检查</div>
       <div class="add">
         <span @click="toAppend">+</span>
@@ -30,15 +35,20 @@
         吊装作业</div>
     </div>
   </div>
+  </div>
 </template>
 <script>
-
+import Tan from '@/components/tan.vue'
 export default {
     name:'MachineSystem',
     data(){
         return{
-            projectName:''
+            projectName:'',
+            show6:0
         }
+    },
+    components:{
+       Tan
     },
     methods:{
       toDailyStatus(){
@@ -50,9 +60,19 @@ export default {
       toAppend(){
           this.$router.push({path:'/append'})
       },
+
       // 点击吊装
       diaozhuang(){
           this.$router.push({path:'/lifting'})
+      },
+      kai(){
+        this.show6=1;
+        console.log(this.show6);
+      },
+      que(e){
+        console.log(e);
+        this.show6=e
+
 
       }
     },
@@ -94,6 +114,7 @@ export default {
     color: red;
     font-size: 40px;
   }
+  
 }
 .subwayProject {
 
@@ -109,6 +130,11 @@ export default {
   width: 100%;
   flex: 1;
   background: #fff;
+  .an{
+  margin-left: 80%;
+ margin-top: 50px;
+
+  }
   .seek {
     width: 100%;
     height: 80px;
