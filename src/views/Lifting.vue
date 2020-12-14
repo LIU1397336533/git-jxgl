@@ -2,14 +2,14 @@
   <div class="Details_page">
     <div class="header">
       <div class="navigation">
-        <i class="iconfont icon-fanhui tubiao" @click="fanhuizhuye"></i>
+        <i class="icon iconfont icon-zuojiantou tubiao" @click="fanhuizhuye"></i>
         日常检查情况
         <i class="iconfont icon-lingdang tubiao"></i>
       </div>
     </div>
     <div class="conter">
         <div class="tiems">
-            <div class="tiemsjuti">2020.11.30 <i class="iconfont icon-shixinsanjiao"></i></div>
+            <div class="tiemsjuti">2020.11.30 <i class="el-icon-caret-bottom"></i></div>
             <div><el-checkbox v-model="checked">只看未生效</el-checkbox></div>
         </div>
         <div class="tiems">汽车起重机吊装令 <span>(0)</span></div>
