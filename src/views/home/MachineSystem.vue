@@ -1,6 +1,6 @@
   <template>
   <div id="machineSystem">
-  
+   <Tan :show6='show6' @que='que'/>
     <div class="subwayProject">
    {{projectName}}
       <i class="icon iconfont icon-ico_open" @click="toConstructor"></i>
@@ -12,14 +12,14 @@
           <i class="icon iconfont icon-fangdajing1"></i>
           <input type="text" placeholder="搜索机械名称 / 规格型号 / 项目设备编码">
         </div>
-        <i class="icon iconfont icon-diantong"></i>
+        <i class="icon iconfont icon-diantong" ></i>
       </div>
     </div>
     <div class="seek"  >
 
     </div>
     <div class="footer">
-      <div>
+      <div @click="kai">
         <i class="icon iconfont icon-richangjianchatianxie"></i>
         日常检查</div>
       <div class="add">
@@ -32,13 +32,17 @@
   </div>
 </template>
 <script>
-
+import Tan from '@/components/tan.vue'
 export default {
     name:'MachineSystem',
     data(){
         return{
-            projectName:''
+            projectName:'',
+            show6:0
         }
+    },
+    components:{
+       Tan
     },
     methods:{
       toConstructor(){
@@ -46,6 +50,15 @@ export default {
       },
       toAppend(){
           this.$router.push({path:'/append'})
+      },
+      kai(){
+        this.show6=1;
+        console.log(this.show6);
+      },
+      que(e){
+        console.log(e);
+        this.show6=e
+
       }
     },
     mounted(){
