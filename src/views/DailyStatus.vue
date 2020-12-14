@@ -12,9 +12,16 @@
     </div>
     <div class="content">
       <div class="tab">
-          <span>今日任务</span>
-          <span>周任务</span>
+          <span @click="tab(1)" :style="step===1?'color:blue':''">今日任务</span>
+          <span @click="tab(2)" :style="step===2?'color:blue':''">周任务</span>
       </div>
+      <div v-if="step===1">
+          <TodayProject/>
+        
+      </div>
+      <div v-if="step===2">
+          <WeekProject/>
+          </div>  
     </div>
     <div class="footer">
       <span>+</span><span>日常查询记录</span>
@@ -23,10 +30,24 @@
 </template>
 
 <script>
+import TodayProject from './dailyStatus/TodayProject'
+import WeekProject from './dailyStatus/WeekProject'
 import BScroll from "better-scroll";
 export default {
   name: "Constructor",
+  components:{
+      TodayProject,
+      WeekProject
+  },
+  data(){
+      return {
+          step:1
+      }
+  },
   methods: {
+      tab(val){
+          this.step=val
+      },
     returnBack() {
       this.$router.go(-1);
     },
