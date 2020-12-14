@@ -13,7 +13,7 @@
         <div v-show="iconName[index]==='icon-shangjiantou'">
           <ConstructorPage :whichUse='whichUse' :title="item.childNodes||item.children" />
         </div>
-      </div>
+      </div> 
       <div v-else >
         <div class="event" @click="changePages(item.name,whichUse)" >
           <span  :style="val===item.name?'color:blue':''"  class='projectlist'>
