@@ -12,7 +12,7 @@
       </div>
     </div>
     <router-view></router-view>
-   
+
   </div>
 </template>
 
@@ -41,7 +41,7 @@ export default {
   width: 100%;
   height: 100%;
   font-size: 28px;
-  
+
 
   box-sizing: border-box;
   background: -webkit-gradient(
