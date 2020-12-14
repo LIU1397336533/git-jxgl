@@ -12,35 +12,50 @@
     </div>
     <div class="content">
       <div class="tab">
-          <span>今日任务</span>
-          <span>周任务</span>
+        <span @click="tab(1)" :style="step===1?'color:blue':''">今日任务</span>
+        <span @click="tab(2)" :style="step===2?'color:blue':''">周任务</span>
+      </div>
+      <div class="box">
+        <div class="scroll">
+          <div v-if="step===1">
+            <TodayProject/>
+          </div>
+          <div v-if="step===2">
+            <WeekProject/>
+          </div>
+        </div>
       </div>
     </div>
     <div class="footer">
-      <span>+</span><span>日常查询记录</span>
+      <span>+</span>
+      <span>日常查询记录</span>
     </div>
   </div>
 </template>
 
 <script>
+import TodayProject from "./dailyStatus/TodayProject";
+import WeekProject from "./dailyStatus/WeekProject";
 import BScroll from "better-scroll";
 export default {
   name: "Constructor",
+  components: {
+    TodayProject,
+    WeekProject
+  },
+  data() {
+    return {
+      step: 1
+    };
+  },
   methods: {
+    tab(val) {
+      this.step = val;
+    },
     returnBack() {
       this.$router.go(-1);
-    },
+    }
   },
-
-  updated() {
-    this.scroll.refresh();
-  },
-  mounted() {
-    this.scroll = new BScroll(".content", {
-      scrollY: true,
-      click: true
-    });
-  }
 };
 </script>
 
@@ -73,34 +88,34 @@ export default {
       font-size: 40px;
     }
   }
-  .content{
+  .content {
     width: 100%;
-    flex:1;
+    flex: 1;
     background: #fff;
-    .tab{
+    .tab {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       border-bottom: 10px solid #f3f5f4;
-      span{
+      span {
         padding: 20px 30px;
       }
     }
   }
-  .footer{
+  .footer {
     width: 100%;
     height: 90px;
     position: fixed;
-    bottom:0;
-    left:0;
+    bottom: 0;
+    left: 0;
     background: #2988fc;
     display: flex;
     justify-content: center;
     align-items: center;
-    span{
+    span {
       color: #fff;
-      &:nth-child(1){
+      &:nth-child(1) {
         font-size: 40px;
         padding-right: 10px;
       }
