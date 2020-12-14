@@ -2,7 +2,7 @@
   <!-- m1 -->
   <div>
     <div v-for="(item, index) in title" :key="item.fullId">
-      <div v-if="item.childNodes||item.children.length" class="wrapper">
+      <div v-if="item.childNodes||item.children&&item.children.length" class="wrapper">
         <div class="titleName">
           <span
             :class="'iconfont ' + iconName[index]"
