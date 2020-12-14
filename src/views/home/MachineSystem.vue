@@ -23,14 +23,14 @@
       <div @click="toDailyStatus">
         <i class="icon iconfont icon-richangjianchatianxie" ></i>
 
-      <div >
+      <div class="left">
         <i class="icon iconfont icon-richangjianchatianxie"></i>
 
         日常检查</div>
       <div class="add">
         <span @click="toAppend">+</span>
       </div>
-      <div @click="diaozhuang">
+      <div @click="diaozhuang" class="right">
         <i class="icon iconfont icon-diaozhuang"></i>
         吊装作业</div>
     </div>
@@ -177,9 +177,9 @@ export default {
 .footer{
   width: 100%;
   height: 80px;
-  // position: fixed;
-  // bottom: 0;
-  // left:0;
+  position: fixed;
+  bottom: 0;
+  left:0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -188,6 +188,14 @@ export default {
   padding: 0 30px;
   background: #f6f6f6;
   color: #1a7ce7;
+  
+.right{
+position: absolute;
+right: 0;
+top: 20px;
+  
+  
+}
   .icon{
     font-size: 20px;
   }
@@ -197,7 +205,8 @@ export default {
     border-radius: 50%;
     background: #f6f6f6;
     text-align: center;
-    position: relative;
+    position: absolute;
+    left: 40%;
     bottom:20px;
     font-size: 60px;
     span{
