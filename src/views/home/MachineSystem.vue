@@ -19,8 +19,8 @@
 
     </div>
     <div class="footer">
-      <div>
-        <i class="icon iconfont icon-richangjianchatianxie" @click="toDailyStatus"></i>
+      <div @click="toDailyStatus">
+        <i class="icon iconfont icon-richangjianchatianxie"></i>
         日常检查</div>
       <div class="add">
         <span @click="toAppend">+</span>
