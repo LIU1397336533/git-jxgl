@@ -171,7 +171,7 @@ export default {
   methods: {
     showmore() {
         console.log(90909);
-     
+
       this.todisplay = !this.todisplay;
       if (this.todisplay) {
         this.more = "收起";
@@ -194,7 +194,7 @@ export default {
   },
   mounted() {
     this.scroll = new BScroll("#weekProject", {
- 
+ click:true
     });
   }
 };

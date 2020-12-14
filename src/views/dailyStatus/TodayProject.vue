@@ -146,8 +146,8 @@
 
         <div class="btn">
           <div @click="displayMore1">
-            {{ more }}
-            <span :class="'iconfont ' + iconName"></span>
+            {{ more1 }}
+            <span :class="'iconfont ' + iconName1"></span>
           </div>
         </div>
       </div>
@@ -207,6 +207,8 @@ export default {
 #TodayProject {
   display: flex;
   width: 100%;
+  height: 100%;
+  overflow: hidden;
   flex-direction: column;
 
   .icon {
@@ -214,7 +216,6 @@ export default {
   }
   .scroll{
     width: 100%;
-    overflow: hidden;
   }
   .checkbox {
     width: 100%;

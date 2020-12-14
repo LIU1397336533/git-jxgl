@@ -12,25 +12,6 @@
     </div>
     <div class="content">
       <div class="tab">
-<<<<<<< HEAD
-        <span @click="tab(1)" :style="step===1?'color:blue':''">今日任务</span>
-        <span @click="tab(2)" :style="step===2?'color:blue':''">周任务</span>
-      </div>
-      <div class="box">
-        <div class="scroll">
-          <div v-if="step===1">
-            <TodayProject/>
-          </div>
-          <div v-if="step===2">
-            <WeekProject/>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer">
-      <span>+</span>
-      <span>日常查询记录</span>
-=======
         <span @click="tab(1)" :style="step === 1 ? 'color:blue' : ''"
           >今日任务</span
         >
@@ -44,7 +25,6 @@
       <div class="component" v-if="step === 2">
         <WeekProject />
       </div>
->>>>>>> 620dbfc2347b2349fdcd673828f94c0a486a3cc6
     </div>
     <div class="footer"><span>+</span><span>日常查询记录</span></div>
   </div>
@@ -72,13 +52,6 @@ export default {
     returnBack() {
       this.$router.go(-1);
     }
-<<<<<<< HEAD
-=======
-  },
-
-  updated() {
-    this.scroll.refresh();
->>>>>>> 620dbfc2347b2349fdcd673828f94c0a486a3cc6
   },
 };
 </script>
@@ -113,12 +86,6 @@ export default {
     }
   }
   .content {
-<<<<<<< HEAD
-    width: 100%;
-    flex: 1;
-    background: #fff;
-    .tab {
-=======
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -127,7 +94,6 @@ export default {
     flex-shrink: 0;
     .tab {
       height: 80px;
->>>>>>> 620dbfc2347b2349fdcd673828f94c0a486a3cc6
       width: 100%;
       display: flex;
       justify-content: center;
@@ -139,7 +105,7 @@ export default {
     }
     > .component {
       width: 100%;
-      height: 70%;
+      height: 85.5%;
       overflow: hidden;
     }
   }
