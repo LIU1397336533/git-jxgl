@@ -1,6 +1,6 @@
   <template>
   <div id="machineSystem">
-  
+
     <div class="subwayProject">
    {{projectName}}
       <i class="icon iconfont icon-ico_open" @click="toConstructor"></i>
@@ -20,7 +20,7 @@
     </div>
     <div class="footer">
       <div @click="toDailyStatus">
-        <i class="icon iconfont icon-richangjianchatianxie"></i>
+        <i class="icon iconfont icon-richangjianchatianxie" ></i>
         日常检查</div>
       <div class="add">
         <span @click="toAppend">+</span>
@@ -54,7 +54,7 @@ export default {
     mounted(){
         this.projectName=localStorage.getItem('systemName')
     }
- 
+
 };
 </script>
 <style lang="scss">

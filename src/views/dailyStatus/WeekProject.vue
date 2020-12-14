@@ -1,6 +1,6 @@
 <template>
   <div id="weekProject">
-
+    weekProject
   </div>
 </template>
 

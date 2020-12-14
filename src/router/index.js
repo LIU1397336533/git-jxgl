@@ -87,7 +87,7 @@ router.beforeEach((to,from,next)=>{
  if(arr.includes(to.path)){
      next()
      return
- }else{ 
+ }else{
  router.go(-1)
     // next(from.path)
  }
